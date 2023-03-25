@@ -1,12 +1,11 @@
 import { Object3D, Vector3 } from "https://cdn.jsdelivr.net/npm/three@0.114/build/three.module.js";
-
-
-
-"https://cdn.jsdelivr.net/npm/0.114/build/module.js";
 import { Cloud } from "./Cloud.js";
 
 
-
+/**
+	* Creates an instance of the Sky.
+	* @class
+	*/
 export class Sky {
    constructor() {
       this.mesh    = new Object3D();

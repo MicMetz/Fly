@@ -1,0 +1,26 @@
+{
+  "name": "fly",
+  "version": "1.0.0",
+  "license": "ISC",
+  "author": "Michael Metz",
+  "description": "",
+  "homepage": "docs/index.html",
+  "main": "main.js",
+  "bin": {
+    "documentation": "./bin/documentation.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MicMetz/Fly.git"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "jsdoc src -r -d docs"
+  },
+  "devDependencies": {
+    "jsdoc": "^4.0.2"
+  },
+  "dependencies": {
+  }
+}

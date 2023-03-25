@@ -2,7 +2,10 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.114/build/three.mod
 import { Colors } from "./global.js";
 
 
-
+/**
+	* Creates an instance of a Cloud.
+	* @class
+	*/
 export class Cloud {
    constructor() {
       this.mesh      = new THREE.Object3D();
