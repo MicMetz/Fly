@@ -7,20 +7,54 @@ import camera from "./engine/Camera.js";
 import { Colors, mousePos as mouse } from "./global.js";
 
 
+
 /**
 	* Creates an instance of the Player's airplane.
 	* @class
+	* @extends	{Object3D}
+	* @param	{Planet}	world		The world the airplane is in.
 	*/
 export class AirPlane {
+
+		/** @constructor
+			* @description	Initializes the airplane.
+			* @param world
+			* @memberof	AirPlane
+			* @instance
+			* @public
+			* @returns	{AirPlane}
+			* @see		World
+			*/
 		constructor( world ) {
-				this.world     = world;
+
+				/**	@member	{Object3D}	mesh		The mesh of the airplane.
+					* @memberof	AirPlane
+					*
+					*/
+				this.world = world;
+
+				/**	@member	{Object3D}	mesh		The mesh of the airplane.
+					* @memberof	AirPlane
+					* @type {Object3D}
+					*/
 				this.propeller = new Object3D();
-				this.mesh      = new Object3D();
-				this.head      = new Object3D();
+
+				/**	@member	{Object3D}	mesh		The mesh of the airplane.
+					* @memberof	AirPlane
+					* @type {Object3D}
+					*/
+				this.mesh = new Object3D()
 				this.mesh.name = "airPlane";
 
-				this.direction      = new Vector3( 0.5, 0, 0 );
-				// this.direction      = new Vector3( 0, 0, 0 );
+				/**	@member	{Vector3}	direction		The direction of the airplane.
+					* @memberof	AirPlane
+					* @description	Direction is a unit vector. It is used to calculate the forward position of the
+					*  airplane.
+					* @type {Vector3}
+					*/
+				this.direction = new Vector3( 0.5, 0, 0 );
+
+
 				this.target         = new Vector3( 0, 0, 0 );
 				this.raycaster      = new Raycaster();
 				this.intersectPoint = new Vector3();
@@ -201,6 +235,10 @@ export class AirPlane {
 			* @name	adjustPropeller
 			* @description Apart of the airplane's animation sequence. This function is called in the render
 			* loop. It rotates the propeller of the airplane.
+			* @memberof	AirPlane
+			* @instance
+			* @public
+			* @returns	{void}
 			*/
 		adjustPropeller() {
 				this.propeller.rotation.x += 0.23;

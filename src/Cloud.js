@@ -7,17 +7,25 @@ import { Colors } from "./global.js";
 	* @class
 	*/
 export class Cloud {
-   constructor() {
-      this.mesh      = new THREE.Object3D();
-      this.mesh.name = "cloud";
 
-      var geom = new THREE.CubeGeometry( 20, 20, 20 );
-      var mat  = new THREE.MeshPhongMaterial( {
-         color: Colors.white,
-      } );
+		/** @constructor
+			* @description	Initializes an instance of a Cloud.
+			* @memberof	Cloud
+			* @instance
+			* @public
+			* @returns	{Cloud}
+			*/
+		constructor() {
+				this.mesh      = new THREE.Object3D();
+				this.mesh.name = "cloud";
 
-      var nBlocs = 3 + Math.floor( Math.random() * 3 );
-      for ( var i = 0; i < nBlocs; i++ ) {
+				var geom = new THREE.CubeGeometry( 20, 20, 20 );
+				var mat  = new THREE.MeshPhongMaterial( {
+						color: Colors.white,
+				} );
+
+				var nBlocs = 3 + Math.floor( Math.random() * 3 );
+				for ( var i = 0; i < nBlocs; i++ ) {
          var m        = new THREE.Mesh( geom.clone(), mat );
          m.position.x = i * 15;
          m.position.y = Math.random() * 10;
