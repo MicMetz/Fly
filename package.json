@@ -6,9 +6,7 @@
   "description": "",
   "homepage": "docs/index.html",
   "main": "main.js",
-  "bin": {
-    "documentation": "./bin/documentation.js"
-  },
+  "bin": {},
   "repository": {
     "type": "git",
     "url": "git@github.com:MicMetz/Fly.git"
@@ -16,11 +14,13 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "doc": "jsdoc src -r -d docs"
+    "doc": "jsdoc src -r -d docs",
+    "generate-docs": "jsdoc -c config/jsdoc.json"
   },
   "devDependencies": {
     "jsdoc": "^4.0.2"
   },
   "dependencies": {
+    "docdash": "^2.0.1"
   }
 }

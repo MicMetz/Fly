@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="utf-8">
-    <title>JSDoc: Class: AirPlane</title>
-
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
+    <title>AirPlane - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
 
-<div id="main">
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
 
-    <h1 class="page-title">Class: AirPlane</h1>
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AirPlane.html">AirPlane</a><ul class='methods'><li data-type='method'><a href="AirPlane.html#adjustPitch">adjustPitch</a></li><li data-type='method'><a href="AirPlane.html#adjustPropeller">adjustPropeller</a></li><li data-type='method'><a href="AirPlane.html#changePropellerSpeed">changePropellerSpeed</a></li><li data-type='method'><a href="AirPlane.html#createCockpit">createCockpit</a></li><li data-type='method'><a href="AirPlane.html#createEngine">createEngine</a></li><li data-type='method'><a href="AirPlane.html#createPropeller">createPropeller</a></li><li data-type='method'><a href="AirPlane.html#createTail">createTail</a></li><li data-type='method'><a href="AirPlane.html#createWings">createWings</a></li><li data-type='method'><a href="AirPlane.html#init">init</a></li><li data-type='method'><a href="AirPlane.html#update">update</a></li></ul></li><li><a href="Cloud.html">Cloud</a></li><li><a href="Planet.html">Planet</a></li><li><a href="Sea.html">Sea</a></li><li><a href="Sky.html">Sky</a><ul class='methods'><li data-type='method'><a href="Sky.html#init">init</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">AirPlane</h1>
+    
 
     
 
@@ -28,33 +47,84 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>AirPlane<span class="signature">(world)</span><span class="type-signature"> &rarr; {<a href="AirPlane.html">AirPlane</a>}</span></h2>
+        <h2>
         
-            <div class="class-description">Creates an instance of the Player's airplane.</div>
+            AirPlane
+        
+        </h2>
+        
+            <div class="class-description usertext"><p>Creates an instance of the Player's airplane.</p></div>
         
     
 </header>
 
 <article>
-    <div class="container-overview">
     
+        <div class="container-overview">
         
+            
 
     
     <h2>Constructor</h2>
     
 
-    
     <h4 class="name" id="AirPlane"><span class="type-signature"></span>new AirPlane<span class="signature">(world)</span><span class="type-signature"> &rarr; {<a href="AirPlane.html">AirPlane</a>}</span></h4>
-    
 
     
 
 
 
-<div class="description">
-    Initializes the airplane.
-</div>
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Initializes the airplane.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AirPlane.js.html">AirPlane.js</a>, <a href="AirPlane.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>World</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
 
 
 
@@ -64,7 +134,11 @@
 
 
 
-    <h5>Parameters:</h5>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -98,6 +172,7 @@
 <span class="param-type"><a href="Planet.html">Planet</a></span>
 
 
+
             
             </td>
 
@@ -105,7 +180,7 @@
 
             
 
-            <td class="description last">The world the airplane is in.</td>
+            <td class="description last"><p>The world the airplane is in.</p></td>
         </tr>
 
     
@@ -117,52 +192,6 @@
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AirPlane.js.html">AirPlane.js</a>, <a href="AirPlane.js.html#line17">line 17</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li>World</li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
 
 
 
@@ -173,17 +202,12 @@
 
 
 
-
-
-
-
-
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -192,6 +216,7 @@
 <span class="param-type"><a href="AirPlane.html">AirPlane</a></span>
 
 
+
     </dd>
 </dl>
 
@@ -199,10 +224,9 @@
 
 
 
-
-
+        
+        </div>
     
-    </div>
 
     
         <h3 class="subsection-title">Extends</h3>
@@ -220,10 +244,10 @@
     
 
     
-
+    
     
 
-    
+     
 
     
 
@@ -232,55 +256,17 @@
 
         
             
-<h4 class="name" id=".direction"><span class="type-signature">(static) </span>direction<span class="type-signature"> :Vector3</span></h4>
-
-
-
-
-<div class="description">
-    Direction is a unit vector. It is used to calculate the forward position of the airplane.
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Vector3</span>
-
-
-        </li>
-    </ul>
+<h4 class="name" id=".direction"><span class="type-signature type-signature-static">(static) </span>direction<span class="type-signature"> :Vector3</span></h4>
 
 
 
 
 
 <dl class="details">
-
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Direction is a unit vector. It is used to calculate the forward position of the
+airplane.</p></li></ul></dd>
     
 
     
@@ -295,31 +281,49 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
 
 
 
 
 
-
-        
-            
-<h4 class="name" id=".mesh"><span class="type-signature">(static) </span>mesh<span class="type-signature"> :Object3D</span></h4>
-
-
-
-
-<div class="description">
-    The mesh of the airplane.
+<div class="description usertext">
+    <p>Direction is a unit vector. It is used to calculate the forward position of the
+airplane.</p>
 </div>
 
 
 
-    <h5>Type:</h5>
+    <h5 class="h5-types">Type:</h5>
     <ul>
         <li>
             
-<span class="param-type">Object3D</span>
+<span class="param-type">Vector3</span>
+
 
 
         </li>
@@ -329,30 +333,19 @@
 
 
 
+
+        
+            
+<h4 class="name" id=".mesh"><span class="type-signature type-signature-static">(static) </span>mesh<span class="type-signature"> :Object3D</span></h4>
+
+
+
+
+
 <dl class="details">
-
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>The mesh of the airplane.</p></li></ul></dd>
     
 
     
@@ -367,31 +360,48 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
 
 
 
 
 
-
-        
-            
-<h4 class="name" id=".mesh"><span class="type-signature">(static) </span>mesh<span class="type-signature"> :Object3D</span></h4>
-
-
-
-
-<div class="description">
-    The mesh of the airplane.
+<div class="description usertext">
+    <p>The mesh of the airplane.</p>
 </div>
 
 
 
-    <h5>Type:</h5>
+    <h5 class="h5-types">Type:</h5>
     <ul>
         <li>
             
 <span class="param-type">Object3D</span>
+
 
 
         </li>
@@ -401,30 +411,19 @@
 
 
 
+
+        
+            
+<h4 class="name" id=".mesh"><span class="type-signature type-signature-static">(static) </span>mesh<span class="type-signature"> :Object3D</span></h4>
+
+
+
+
+
 <dl class="details">
-
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>The mesh of the airplane.</p></li></ul></dd>
     
 
     
@@ -439,31 +438,48 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
 
 
 
 
 
-
-        
-            
-<h4 class="name" id=".mesh"><span class="type-signature">(static) </span>mesh<span class="type-signature"> :Object3D</span></h4>
-
-
-
-
-<div class="description">
-    The mesh of the airplane.
+<div class="description usertext">
+    <p>The mesh of the airplane.</p>
 </div>
 
 
 
-    <h5>Type:</h5>
+    <h5 class="h5-types">Type:</h5>
     <ul>
         <li>
             
 <span class="param-type">Object3D</span>
+
 
 
         </li>
@@ -473,30 +489,19 @@
 
 
 
+
+        
+            
+<h4 class="name" id=".mesh"><span class="type-signature type-signature-static">(static) </span>mesh<span class="type-signature"> :Object3D</span></h4>
+
+
+
+
+
 <dl class="details">
-
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>The mesh of the airplane.</p></li></ul></dd>
     
 
     
@@ -511,7 +516,52 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The mesh of the airplane.</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object3D</span>
+
+
+
+        </li>
+    </ul>
 
 
 
@@ -529,17 +579,57 @@
 
     
 
-    
     <h4 class="name" id="adjustPitch"><span class="type-signature"></span>adjustPitch<span class="signature">(direction)</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
 
     
 
 
 
-<div class="description">
-    Apart of the airplane's update sequence. This function is called in the render. itadjusts the nose angle of the airplane in accordance to the direction of the plane and the pitch.
-</div>
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Apart of the airplane's update sequence. This function is called in the render. it
+adjusts the nose angle of the airplane in accordance to the direction of the plane and the pitch.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AirPlane.js.html">AirPlane.js</a>, <a href="AirPlane.js.html#line250">line 250</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -549,7 +639,11 @@
 
 
 
-    <h5>Parameters:</h5>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -597,45 +691,6 @@
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AirPlane.js.html">AirPlane.js</a>, <a href="AirPlane.js.html#line250">line 250</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
 
@@ -646,23 +701,19 @@
 
 
 
-
-
-
-
-
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
     <dd>
         
 <span class="param-type">void</span>
+
 
 
     </dd>
@@ -672,61 +723,23 @@
 
 
 
-
-
         
             
 
     
 
-    
     <h4 class="name" id="adjustPropeller"><span class="type-signature"></span>adjustPropeller<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
 
     
-
-
-
-<div class="description">
-    Apart of the airplane's animation sequence. This function is called in the renderloop. It rotates the propeller of the airplane.
-</div>
-
-
-
-
-
-
-
-
-
 
 
 
 
 <dl class="details">
-
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Apart of the airplane's animation sequence. This function is called in the render
+loop. It rotates the propeller of the airplane.</p></li></ul></dd>
     
 
     
@@ -741,6 +754,30 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
 
 
@@ -757,18 +794,31 @@
 
 
 
-<h5>Returns:</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
 
         
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
     <dd>
         
 <span class="param-type">void</span>
+
 
 
     </dd>
@@ -778,24 +828,61 @@
 
 
 
-
-
         
             
 
     
 
-    
     <h4 class="name" id="changePropellerSpeed"><span class="type-signature"></span>changePropellerSpeed<span class="signature">(speed)</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
 
     
 
 
 
-<div class="description">
-    Changes the speed of the propellers rotation in accordance to the speed of the plane.
-</div>
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Changes the speed of the propellers rotation in accordance to the speed of the plane.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AirPlane.js.html">AirPlane.js</a>, <a href="AirPlane.js.html#line220">line 220</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -805,7 +892,11 @@
 
 
 
-    <h5>Parameters:</h5>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -853,45 +944,6 @@
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AirPlane.js.html">AirPlane.js</a>, <a href="AirPlane.js.html#line220">line 220</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
 
@@ -902,23 +954,19 @@
 
 
 
-
-
-
-
-
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
     <dd>
         
 <span class="param-type">void</span>
+
 
 
     </dd>
@@ -928,61 +976,22 @@
 
 
 
-
-
         
             
 
     
 
-    
     <h4 class="name" id="createCockpit"><span class="type-signature"></span>createCockpit<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
 
     
-
-
-
-<div class="description">
-    Creates the cockpit of the airplane.
-</div>
-
-
-
-
-
-
-
-
-
 
 
 
 
 <dl class="details">
-
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Creates the cockpit of the airplane.</p></li></ul></dd>
     
 
     
@@ -997,6 +1006,30 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
 
 
@@ -1013,18 +1046,31 @@
 
 
 
-<h5>Returns:</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
 
         
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
     <dd>
         
 <span class="param-type">void</span>
+
 
 
     </dd>
@@ -1034,61 +1080,22 @@
 
 
 
-
-
         
             
 
     
 
-    
     <h4 class="name" id="createEngine"><span class="type-signature"></span>createEngine<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
 
     
-
-
-
-<div class="description">
-    Creates the engine of the airplane.
-</div>
-
-
-
-
-
-
-
-
-
 
 
 
 
 <dl class="details">
-
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Creates the engine of the airplane.</p></li></ul></dd>
     
 
     
@@ -1103,6 +1110,30 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
 
 
@@ -1119,18 +1150,31 @@
 
 
 
-<h5>Returns:</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
 
         
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
     <dd>
         
 <span class="param-type">void</span>
+
 
 
     </dd>
@@ -1140,61 +1184,22 @@
 
 
 
-
-
         
             
 
     
 
-    
     <h4 class="name" id="createPropeller"><span class="type-signature"></span>createPropeller<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
 
     
-
-
-
-<div class="description">
-    Creates the front propeller of the airplane.
-</div>
-
-
-
-
-
-
-
-
-
 
 
 
 
 <dl class="details">
-
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Creates the front propeller of the airplane.</p></li></ul></dd>
     
 
     
@@ -1209,6 +1214,30 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
 
 
@@ -1225,18 +1254,31 @@
 
 
 
-<h5>Returns:</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
 
         
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
     <dd>
         
 <span class="param-type">void</span>
+
 
 
     </dd>
@@ -1246,61 +1288,22 @@
 
 
 
-
-
         
             
 
     
 
-    
     <h4 class="name" id="createTail"><span class="type-signature"></span>createTail<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
 
     
-
-
-
-<div class="description">
-    Creates the tailfin of the airplane.
-</div>
-
-
-
-
-
-
-
-
-
 
 
 
 
 <dl class="details">
-
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Creates the tailfin of the airplane.</p></li></ul></dd>
     
 
     
@@ -1315,6 +1318,30 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
 
 
@@ -1331,18 +1358,31 @@
 
 
 
-<h5>Returns:</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
 
         
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
     <dd>
         
 <span class="param-type">void</span>
+
 
 
     </dd>
@@ -1352,61 +1392,22 @@
 
 
 
-
-
         
             
 
     
 
-    
     <h4 class="name" id="createWings"><span class="type-signature"></span>createWings<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
 
     
-
-
-
-<div class="description">
-    Creates the wings of the airplane.
-</div>
-
-
-
-
-
-
-
-
-
 
 
 
 
 <dl class="details">
-
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Creates the wings of the airplane.</p></li></ul></dd>
     
 
     
@@ -1421,6 +1422,30 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
 
 
@@ -1437,18 +1462,31 @@
 
 
 
-<h5>Returns:</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
 
         
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
     <dd>
         
 <span class="param-type">void</span>
+
 
 
     </dd>
@@ -1458,61 +1496,22 @@
 
 
 
-
-
         
             
 
     
 
-    
     <h4 class="name" id="init"><span class="type-signature"></span>init<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
 
     
-
-
-
-<div class="description">
-    Initializes the airplane.
-</div>
-
-
-
-
-
-
-
-
-
 
 
 
 
 <dl class="details">
-
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Initializes the airplane.</p></li></ul></dd>
     
 
     
@@ -1527,6 +1526,30 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
 
 
@@ -1543,18 +1566,31 @@
 
 
 
-<h5>Returns:</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
 
         
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
     <dd>
         
 <span class="param-type">void</span>
+
 
 
     </dd>
@@ -1564,24 +1600,61 @@
 
 
 
-
-
         
             
 
     
 
-    
     <h4 class="name" id="update"><span class="type-signature"></span>update<span class="signature">(position)</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
 
     
 
 
 
-<div class="description">
-    Updates the status of the airplane. This function is called in the render loop.
-</div>
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Updates the status of the airplane. This function is called in the render loop.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AirPlane.js.html">AirPlane.js</a>, <a href="AirPlane.js.html#line271">line 271</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
 
 
 
@@ -1591,7 +1664,11 @@
 
 
 
-    <h5>Parameters:</h5>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -1639,45 +1716,6 @@
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="AirPlane.js.html">AirPlane.js</a>, <a href="AirPlane.js.html#line271">line 271</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
 
@@ -1688,17 +1726,12 @@
 
 
 
-
-
-
-
-
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -1707,12 +1740,11 @@
 <span class="param-type">void</span>
 
 
+
     </dd>
 </dl>
 
     
-
-
 
 
 
@@ -1729,19 +1761,21 @@
 
 
 
+    
+    
 </div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AirPlane.html">AirPlane</a></li><li><a href="Cloud.html">Cloud</a></li><li><a href="Planet.html">Planet</a></li><li><a href="Sea.html">Sea</a></li><li><a href="Sky.html">Sky</a></li></ul>
-</nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sat Mar 25 2023 13:15:32 GMT-0700 (GMT-07:00)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Sat Mar 25 2023 13:30:04 GMT-0700 (GMT-07:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
 </body>
 </html>
