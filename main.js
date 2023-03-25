@@ -8,14 +8,14 @@ import controller from "./src/engine/Controls.js";
 import renderer from "./src/engine/Renderer.js";
 import scene from "./src/engine/Scene.js";
 import {
-   mousePos,
-   aspectRatio,
-   container,
-   farPlane,
-   fieldOfView,
-   HEIGHT,
-   nearPlane,
-   WIDTH, normalize
+		mousePos,
+		aspectRatio,
+		container,
+		farPlane,
+		fieldOfView,
+		HEIGHT,
+		nearPlane,
+		WIDTH, normalize, mousePos as mouse
 } from "./src/global.js";
 import { Sea } from "./src/Sea.js";
 import { Sky } from "./src/Sky.js";
@@ -24,17 +24,17 @@ import { Planet } from "./src/Planet.js";
 
 
 function init( event ) {
-   createScene();
-   createLights();
-   createPlane();
-   // createSea();
-   createSky();
-   createPlanet();
-   document.addEventListener( "mousemove", onMouseMove, false );
-   window.addEventListener( 'resize', onWindowResize );
-   document.body.addEventListener( 'keydown', onKeyDown, false );
-   document.body.addEventListener( 'keyup', onKeyUp, false );
-   animate()
+		createScene();
+		createLights();
+		createPlanet();
+		createPlane();
+		// createSea();
+		createSky();
+		document.addEventListener( "mousemove", onmousemove, false );
+		window.addEventListener( 'resize', onWindowResize );
+		document.body.addEventListener( 'keydown', onKeyDown, false );
+		document.body.addEventListener( 'keyup', onKeyUp, false );
+		animate()
 }
 
 
@@ -43,24 +43,31 @@ function init( event ) {
 var sea;
 var planet;
 var airplane;
-// var controller;
 var sky;
+var raycaster	= new THREE.Raycaster();
+var intersection	= new THREE.Vector3();
+var positionAdjustment	= new THREE.Vector3();
 var ambientLight, hemisphereLight, shadowLight;
-const clock = new THREE.Clock();
+
+var moveLeft  = false;
+var moveRight = false;
+var moveUp    = false;
+var moveDown  = false;
+const clock   = new THREE.Clock();
 
 
 function createPlane() {
-   airplane = new AirPlane();
-   airplane.mesh.scale.set( 0.25, 0.25, 0.25 );
-   airplane.mesh.position.y = 100;
+		airplane = new AirPlane( planet.planet );
+		airplane.mesh.scale.set( 0.25, 0.25, 0.25 );
+		airplane.mesh.position.y = 100;
 
-   scene.add( airplane.mesh );
+		scene.add( airplane.mesh );
 
 
-   // controller = new OrbitControls( airplane.mesh, renderer.domElement );
+		// controller = new OrbitControls( airplane.mesh, renderer.domElement );
 
-   controller.target.set( airplane.mesh.position.x, airplane.mesh.position.y, airplane.mesh.position.z );
-   // controller.update();
+		controller.target.set( airplane.mesh.position.x, airplane.mesh.position.y, airplane.mesh.position.z );
+		// controller.update();
 
 }
 
@@ -137,10 +144,8 @@ function animate() {
 
 
 function updatePlane() {
-   var targetY              = normalize( mousePos.y, -0.75, 0.75, 25, 175 );
-   var targetX              = normalize( mousePos.x, -0.75, 0.75, -100, 100 );
-
-   airplane.update( camera );
+		// var position = new THREE.Vector3( normalize( mousePos.x, -1, 1, -100, 100 ), normalize( mousePos.y, -1, 1, 25, 175 ), 100 );
+		airplane.update( positionAdjustment );
 }
 
 
@@ -154,33 +159,39 @@ function onWindowResize() {
    HEIGHT = window.innerHeight;
    WIDTH  = window.innerWidth;
    renderer.setSize( WIDTH, HEIGHT );
-   camera.aspect = WIDTH / HEIGHT;
-   camera.updateProjectionMatrix();
+		camera.aspect = WIDTH / HEIGHT;
+		camera.updateProjectionMatrix();
 }
 
 
-function onMouseMove( event ) {
-   var tx     = -1 + ( event.clientX / WIDTH ) * 2;
-   var ty     = 1 - ( event.clientY / HEIGHT ) * 2;
-   mousePos.x = tx;
-   mousePos.y = ty;
+function onmousemove( event ) {
+		mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+		mouse.y = -( event.clientY / window.innerHeight ) * 2 + 1;
+
+		raycaster.setFromCamera( mouse, camera );
+		raycaster.ray.intersectPlane( new THREE.Plane( new THREE.Vector3( 0, 0, 1 ), 0 ), intersection );
+
 }
 
 
 
 function onKeyDown( e ) {
-   const keyCode = e.which;
-   if ( keyCode === 87 ) { // w
-
-   }
+		const keyCode = e.which;
+		if ( keyCode === 87 ) { // w
+				// moveDown = true;
+				positionAdjustment.y = -1;
+		}
    if ( keyCode === 83 ) { // s
-
+					// moveUp = true;
+					positionAdjustment.y = 1;
    }
    if ( keyCode === 65 ) { // a
-
+					// moveLeft = true;
+					positionAdjustment.z = -1;
    }
    if ( keyCode === 68 ) { // d
-
+					// moveRight = true;
+					positionAdjustment.z = 1;
    }
 }
 
@@ -188,16 +199,20 @@ function onKeyDown( e ) {
 function onKeyUp( e ) {
    const keyCode = e.which;
    if ( keyCode === 87 ) { // w
-
+					// moveDown = false;
+					positionAdjustment.y = 0;
    }
    if ( keyCode === 83 ) { // s
-
+					// moveUp = false;
+					positionAdjustment.y = 0;
    }
    if ( keyCode === 65 ) { // a
-
+					// moveLeft = false;
+					positionAdjustment.z = 0;
    }
    if ( keyCode === 68 ) { // d
-
+					// moveRight = false;
+					positionAdjustment.z = 0;
    }
    if ( keyCode === 86 ) { // v
 

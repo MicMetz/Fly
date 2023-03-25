@@ -23,4 +23,4 @@ export let HEIGHT      = window.innerHeight;
 export let WIDTH       = window.innerWidth;
 export let aspectRatio = WIDTH / HEIGHT;
 
-export let mousePos = { x: 0, y: 0 };
+export let mousePos = { x: 0, y: 0,	z: 0 };
