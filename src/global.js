@@ -16,9 +16,9 @@ export function normalize( v, vmin, vmax, tmin, tmax ) {
 }
 
 
-export let fieldOfView = 60;
+export let fieldOfView = 90;
 export let nearPlane   = 1;
-export let farPlane    = 10000;
+export let farPlane    = 20000;
 export let HEIGHT      = window.innerHeight;
 export let WIDTH       = window.innerWidth;
 export let aspectRatio = WIDTH / HEIGHT;

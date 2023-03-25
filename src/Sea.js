@@ -41,7 +41,7 @@ export class Sea {
    }
 
 
-   animate( time ) {
+   update( time ) {
 
       this.vertexData.forEach( ( vertex, index ) => {
          var ywave = vertex.initialHeight + Math.sin( time + vertex.phase ) * vertex.amplitude;

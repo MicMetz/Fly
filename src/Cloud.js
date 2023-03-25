@@ -60,7 +60,7 @@ export class Cloud {
    }
 
 
-   animate( time ) {
+   update( time ) {
       this.moveCloud( time );
       this.rotateCloud( time );
       this.scaleCloud( time );

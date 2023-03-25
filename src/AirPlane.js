@@ -11,12 +11,15 @@ export class AirPlane {
    constructor() {
       this.propeller = new Object3D();
       this.mesh      = new Object3D();
+      this.head      = new Object3D();
       this.mesh.name = "airPlane";
 
-      // this.direction = new Vector3( 0, 0, -1 );
-      // this.speed     = 0.5;
-      // this.acc       = 0.05;
-      // this.turn      = 0.05;
+      // this.direction    = new Vector3( 1, 0, 0 );
+      this.direction = new Vector3( 0, 0, 0 );
+      this.speed     = 0.5;
+      this.acc       = 0.05;
+      this.turn      = 0.05;
+      this.target    = new Vector3( 0, 0, 0 );
 
       this.init();
    }
@@ -32,6 +35,7 @@ export class AirPlane {
       this.box = new Box3();
       this.box.setFromObject( this.mesh );
       this.helper = new BoxHelper( this.mesh );
+      this.target.setFromMatrixPosition( this.propeller.matrixWorld );
    }
 
 
@@ -40,7 +44,7 @@ export class AirPlane {
       const matPropeller           = new MeshPhongMaterial( {
          color: Colors.brown,
       } );
-      this.propeller               = new Mesh( geoPropeller, matPropeller );
+      this.propeller               = new Object3D( new Mesh( geoPropeller, matPropeller ) )
       this.propeller.castShadow    = true;
       this.propeller.receiveShadow = true;
 
@@ -55,6 +59,7 @@ export class AirPlane {
       this.propeller.add( blade );
       this.propeller.position.set( 50, 0, 0 );
       this.mesh.add( this.propeller );
+      this.propeller.name = "propeller";
    }
 
 
@@ -123,19 +128,21 @@ export class AirPlane {
       this.propeller.rotation.x += speed;
    }
 
-   //
-   // update( camera ) {
-   //    this.mesh.position.addScaledVector( this.direction, this.speed );
-   //    camera.position.addScaledVector( this.direction, this.speed );
-   //    this.box.setFromObject( this.mesh );
-   // }
-   //
 
-   animate( time ) {
-      this.mesh.rotation.y = Math.sin( time / 1000 ) / 2;
-      this.mesh.rotation.z = Math.sin( time / 1000 ) / 4;
-      this.mesh.rotation.x = Math.sin( time / 1000 ) / 8;
+   update( camera ) {
+      this.mesh.position.addScaledVector( this.direction, this.speed );
+      this.box.setFromObject( this.mesh );
+      this.mesh.position.y += this.direction.y;
+      this.mesh.position.x += this.direction.x;
+      this.propeller.rotation.x += 0.23;
+      this.propeller.rotation.z += 0.23;
+
+      // Set the camera position behind the airplane
+      this.target.setFromMatrixPosition( this.propeller.matrixWorld );
+      camera.position.set( this.mesh.position.x - 100, this.mesh.position.y + 20, this.mesh.position.z );
+      camera.lookAt( this.target );
    }
+
 
 
 }

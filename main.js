@@ -1,4 +1,7 @@
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.114/build/three.module.js";
+import {
+   OrbitControls
+} from "https://cdn.jsdelivr.net/npm/three@0.114/examples/jsm/controls/OrbitControls.js";
 import { AirPlane } from "./src/AirPlane.js";
 import camera from "./src/engine/Camera.js";
 import controller from "./src/engine/Controls.js";
@@ -16,6 +19,7 @@ import {
 } from "./src/global.js";
 import { Sea } from "./src/Sea.js";
 import { Sky } from "./src/Sky.js";
+import { Planet } from "./src/Planet.js";
 
 
 
@@ -23,8 +27,9 @@ function init( event ) {
    createScene();
    createLights();
    createPlane();
-   createSea();
+   // createSea();
    createSky();
+   createPlanet();
    document.addEventListener( "mousemove", onMouseMove, false );
    window.addEventListener( 'resize', onWindowResize );
    document.body.addEventListener( 'keydown', onKeyDown, false );
@@ -33,26 +38,53 @@ function init( event ) {
 }
 
 
-function createScene() {
-   scene.fog         = new THREE.Fog( 0xf7d9aa, 100, 950 );
-   camera.position.x = 0;
-   camera.position.z = 200;
-   camera.position.y = 100;
 
-   renderer.setSize( WIDTH, HEIGHT );
-   renderer.shadowMap.enabled = true;
-   container.appendChild( renderer.domElement );
+//------------------------------------------------------------<BUILDERS>------------------------------------------------------------
+var sea;
+var planet;
+var airplane;
+// var controller;
+var sky;
+var ambientLight, hemisphereLight, shadowLight;
+const clock = new THREE.Clock();
 
-   controller.target.set( 0, 5, 0 );
-   controller.update();
+
+function createPlane() {
+   airplane = new AirPlane();
+   airplane.mesh.scale.set( 0.25, 0.25, 0.25 );
+   airplane.mesh.position.y = 100;
+
+   scene.add( airplane.mesh );
+
+
+   // controller = new OrbitControls( airplane.mesh, renderer.domElement );
+
+   controller.target.set( airplane.mesh.position.x, airplane.mesh.position.y, airplane.mesh.position.z );
+   // controller.update();
 
 }
 
 
+function createSea() {
+   sea                 = new Sea();
+   sea.mesh.position.y = -600;
+   scene.add( sea.mesh );
+}
 
-// LIGHTS
 
-var ambientLight, hemisphereLight, shadowLight;
+function createSky() {
+   sky                 = new Sky();
+   sky.mesh.position.y = -600;
+   scene.add( sky.mesh );
+}
+
+
+function createPlanet() {
+   planet                   = new Planet();
+   planet.planet.position.y = -600;
+   scene.add( planet.planet );
+
+}
 
 
 function createLights() {
@@ -74,38 +106,22 @@ function createLights() {
 }
 
 
+function createScene() {
+   scene.fog         = new THREE.Fog( 0xf7d9aa, 100, 950 );
+   camera.position.x = 0;
+   camera.position.z = 200;
+   camera.position.y = 100;
 
-//------------------------------------------------------------<BUILDERS>------------------------------------------------------------
-var sea;
-var airplane;
-var sky;
-const clock = new THREE.Clock();
-
-
-function createPlane() {
-   airplane = new AirPlane();
-   airplane.mesh.scale.set( 0.25, 0.25, 0.25 );
-   airplane.mesh.position.y = 100;
-   //   airplane.mesh.position.z = 0;
-   scene.add( airplane.mesh );
-}
+   renderer.setSize( WIDTH, HEIGHT );
+   renderer.shadowMap.enabled = true;
+   container.appendChild( renderer.domElement );
 
 
-function createSea() {
-   sea                 = new Sea();
-   sea.mesh.position.y = -600;
-   scene.add( sea.mesh );
-}
-
-
-function createSky() {
-   sky                 = new Sky();
-   sky.mesh.position.y = -600;
-   scene.add( sky.mesh );
 }
 
 
 //------------------------------------------------------------</BUILDERS>------------------------------------------------------------
+
 
 
 // -----------------------------------------------------------<ANIMATION>-----------------------------------------------------------
@@ -113,11 +129,8 @@ function animate() {
    let time = clock.getElapsedTime();
 
    updatePlane();
-   // sea.animate( time );
-   // sky.animate( time );
-
-   sea.mesh.rotation.z += 0.005;
-   sky.mesh.rotation.z += 0.01;
+   sky.update( time );
+   planet.update( time );
    renderer.render( scene, camera );
    requestAnimationFrame( animate );
 }
@@ -126,12 +139,9 @@ function animate() {
 function updatePlane() {
    var targetY              = normalize( mousePos.y, -0.75, 0.75, 25, 175 );
    var targetX              = normalize( mousePos.x, -0.75, 0.75, -100, 100 );
-   airplane.mesh.position.y = targetY;
-   airplane.mesh.position.x = targetX;
-   airplane.propeller.rotation.x += 0.23;
-   airplane.propeller.rotation.z += 0.23;
-}
 
+   airplane.update( camera );
+}
 
 
 // -----------------------------------------------------------</ANIMATION>-----------------------------------------------------------
