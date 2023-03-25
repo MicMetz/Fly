@@ -38,17 +38,6 @@ function init( event ) {
 }
 
 
-var documentation = require('documentation');
-var fs = require('fs');
-
-documentation.build(['main.js'])
-.then(documentation.formats.md)
-.then(output => {
-		// output is a string of Markdown data
-		fs.writeFileSync('./output.md', output);
-});
-
-
 //------------------------------------------------------------<BUILDERS>------------------------------------------------------------
 var sea;
 var planet;
